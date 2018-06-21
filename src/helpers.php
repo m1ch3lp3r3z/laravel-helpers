@@ -6,7 +6,7 @@
  * rappa819@gmail.com
  */
 
-if ( ! function_exists('append_config'))
+if ( ! function_exists('lrv_append_config'))
 {
     /**
      * Assign high numeric IDs to a config item to force appending.
@@ -14,7 +14,7 @@ if ( ! function_exists('append_config'))
      * @param  array  $array
      * @return array
      */
-    function append_config(array $array)
+    function lrv_append_config(array $array)
     {
         $start = 9999;
 
@@ -32,7 +32,7 @@ if ( ! function_exists('append_config'))
     }
 }
 
-if ( ! function_exists('array_add'))
+if ( ! function_exists('lrv_array_add'))
 {
     /**
      * Add an element to an array using "dot" notation if it doesn't exist.
@@ -42,7 +42,7 @@ if ( ! function_exists('array_add'))
      * @param  mixed   $value
      * @return array
      */
-    function array_add($array, $key, $value)
+    function lrv_array_add($array, $key, $value)
     {
         if (is_null(get($array, $key)))
         {
@@ -53,7 +53,7 @@ if ( ! function_exists('array_add'))
     }
 }
 
-if ( ! function_exists('array_build'))
+if ( ! function_exists('lrv_array_build'))
 {
     /**
      * Build a new array using a callback.
@@ -62,7 +62,7 @@ if ( ! function_exists('array_build'))
      * @param  \Closure  $callback
      * @return array
      */
-    function array_build($array, Closure $callback)
+    function lrv_array_build($array, Closure $callback)
     {
         $results = array();
 
@@ -77,7 +77,7 @@ if ( ! function_exists('array_build'))
     }
 }
 
-if ( ! function_exists('array_divide'))
+if ( ! function_exists('lrv_array_divide'))
 {
     /**
      * Divide an array into two arrays. One with keys and the other with values.
@@ -85,13 +85,13 @@ if ( ! function_exists('array_divide'))
      * @param  array  $array
      * @return array
      */
-    function array_divide($array)
+    function lrv_array_divide($array)
     {
         return array(array_keys($array), array_values($array));
     }
 }
 
-if ( ! function_exists('array_dot'))
+if ( ! function_exists('lrv_array_dot'))
 {
     /**
      * Flatten a multi-dimensional associative array with dots.
@@ -100,7 +100,7 @@ if ( ! function_exists('array_dot'))
      * @param  string  $prepend
      * @return array
      */
-    function array_dot($array, $prepend = '')
+    function lrv_array_dot($array, $prepend = '')
     {
         $results = array();
 
@@ -120,7 +120,7 @@ if ( ! function_exists('array_dot'))
     }
 }
 
-if ( ! function_exists('array_except'))
+if ( ! function_exists('lrv_array_except'))
 {
     /**
      * Get all of the given array except for a specified array of items.
@@ -129,13 +129,13 @@ if ( ! function_exists('array_except'))
      * @param  array|string  $keys
      * @return array
      */
-    function array_except($array, $keys)
+    function lrv_array_except($array, $keys)
     {
         return array_diff_key($array, array_flip((array) $keys));
     }
 }
 
-if ( ! function_exists('array_fetch'))
+if ( ! function_exists('lrv_array_fetch'))
 {
     /**
      * Fetch a flattened array of a nested array element.
@@ -144,7 +144,7 @@ if ( ! function_exists('array_fetch'))
      * @param  string  $key
      * @return array
      */
-    function array_fetch($array, $key)
+    function lrv_array_fetch($array, $key)
     {
         $results = array();
 
@@ -165,7 +165,7 @@ if ( ! function_exists('array_fetch'))
     }
 }
 
-if ( ! function_exists('array_first'))
+if ( ! function_exists('lrv_array_first'))
 {
     /**
      * Return the first element in an array passing a given truth test.
@@ -175,7 +175,7 @@ if ( ! function_exists('array_first'))
      * @param  mixed     $default
      * @return mixed
      */
-    function array_first($array, $callback, $default = null)
+    function lrv_array_first($array, $callback, $default = null)
     {
         foreach ($array as $key => $value)
         {
@@ -186,7 +186,7 @@ if ( ! function_exists('array_first'))
     }
 }
 
-if ( ! function_exists('array_last'))
+if ( ! function_exists('lrv_array_last'))
 {
     /**
      * Return the last element in an array passing a given truth test.
@@ -196,13 +196,13 @@ if ( ! function_exists('array_last'))
      * @param  mixed     $default
      * @return mixed
      */
-    function array_last($array, $callback, $default = null)
+    function lrv_array_last($array, $callback, $default = null)
     {
         return first(array_reverse($array), $callback, $default);
     }
 }
 
-if ( ! function_exists('array_flatten'))
+if ( ! function_exists('lrv_array_flatten'))
 {
     /**
      * Flatten a multi-dimensional array into a single level.
@@ -210,7 +210,7 @@ if ( ! function_exists('array_flatten'))
      * @param  array  $array
      * @return array
      */
-    function array_flatten($array)
+    function lrv_array_flatten($array)
     {
         $return = array();
 
@@ -220,7 +220,7 @@ if ( ! function_exists('array_flatten'))
     }
 }
 
-if ( ! function_exists('array_forget'))
+if ( ! function_exists('lrv_array_forget'))
 {
     /**
      * Remove one or many array items from a given array using "dot" notation.
@@ -229,7 +229,7 @@ if ( ! function_exists('array_forget'))
      * @param  array|string  $keys
      * @return void
      */
-    function array_forget(&$array, $keys)
+    function lrv_array_forget(&$array, $keys)
     {
         $original =& $array;
 
@@ -255,7 +255,7 @@ if ( ! function_exists('array_forget'))
     }
 }
 
-if ( ! function_exists('array_get'))
+if ( ! function_exists('lrv_array_get'))
 {
     /**
      * Get an item from an array using "dot" notation.
@@ -265,7 +265,7 @@ if ( ! function_exists('array_get'))
      * @param  mixed   $default
      * @return mixed
      */
-    function array_get($array, $key, $default = null)
+    function lrv_array_get($array, $key, $default = null)
     {
         if (is_null($key)) return $array;
 
@@ -285,7 +285,7 @@ if ( ! function_exists('array_get'))
     }
 }
 
-if ( ! function_exists('array_has'))
+if ( ! function_exists('lrv_array_has'))
 {
     /**
      * Check if an item exists in an array using "dot" notation.
@@ -294,7 +294,7 @@ if ( ! function_exists('array_has'))
      * @param  string  $key
      * @return bool
      */
-    function array_has($array, $key)
+    function lrv_array_has($array, $key)
     {
         if (empty($array) || is_null($key)) return false;
 
@@ -314,7 +314,7 @@ if ( ! function_exists('array_has'))
     }
 }
 
-if ( ! function_exists('array_only'))
+if ( ! function_exists('lrv_array_only'))
 {
     /**
      * Get a subset of the items from the given array.
@@ -323,13 +323,13 @@ if ( ! function_exists('array_only'))
      * @param  array|string  $keys
      * @return array
      */
-    function array_only($array, $keys)
+    function lrv_array_only($array, $keys)
     {
         return array_intersect_key($array, array_flip((array) $keys));
     }
 }
 
-if ( ! function_exists('array_pluck'))
+if ( ! function_exists('lrv_array_pluck'))
 {
     /**
      * Pluck an array of values from an array.
@@ -339,7 +339,7 @@ if ( ! function_exists('array_pluck'))
      * @param  string  $key
      * @return array
      */
-    function array_pluck($array, $value, $key = null)
+    function lrv_array_pluck($array, $value, $key = null)
     {
         $results = array();
 
@@ -366,7 +366,7 @@ if ( ! function_exists('array_pluck'))
     }
 }
 
-if ( ! function_exists('array_pull'))
+if ( ! function_exists('lrv_array_pull'))
 {
     /**
      * Get a value from the array, and remove it.
@@ -376,7 +376,7 @@ if ( ! function_exists('array_pull'))
      * @param  mixed   $default
      * @return mixed
      */
-    function array_pull(&$array, $key, $default = null)
+    function lrv_array_pull(&$array, $key, $default = null)
     {
         $value = get($array, $key, $default);
 
@@ -386,7 +386,7 @@ if ( ! function_exists('array_pull'))
     }
 }
 
-if ( ! function_exists('array_set'))
+if ( ! function_exists('lrv_array_set'))
 {
     /**
      * Set an array item to a given value using "dot" notation.
@@ -398,7 +398,7 @@ if ( ! function_exists('array_set'))
      * @param  mixed   $value
      * @return array
      */
-    function array_set(&$array, $key, $value)
+    function lrv_array_set(&$array, $key, $value)
     {
         if (is_null($key)) return $array = $value;
 
@@ -425,7 +425,7 @@ if ( ! function_exists('array_set'))
     }
 }
 
-if ( ! function_exists('array_where'))
+if ( ! function_exists('lrv_array_where'))
 {
     /**
      * Filter the array using the given Closure.
@@ -434,7 +434,7 @@ if ( ! function_exists('array_where'))
      * @param  \Closure  $callback
      * @return array
      */
-    function array_where($array, Closure $callback)
+    function lrv_array_where($array, Closure $callback)
     {
         $filtered = array();
 
@@ -447,7 +447,7 @@ if ( ! function_exists('array_where'))
     }
 }
 
-if ( ! function_exists('camel_case'))
+if ( ! function_exists('lrv_camel_case'))
 {
     /**
      * Convert a value to camel case.
@@ -455,7 +455,7 @@ if ( ! function_exists('camel_case'))
      * @param  string  $value
      * @return string
      */
-    function camel_case($value)
+    function lrv_camel_case($value)
     {
         static $camelCache = [];
 
@@ -468,7 +468,7 @@ if ( ! function_exists('camel_case'))
     }
 }
 
-if ( ! function_exists('class_basename'))
+if ( ! function_exists('lrv_class_basename'))
 {
     /**
      * Get the class "basename" of the given object / class.
@@ -476,7 +476,7 @@ if ( ! function_exists('class_basename'))
      * @param  string|object  $class
      * @return string
      */
-    function class_basename($class)
+    function lrv_class_basename($class)
     {
         $class = is_object($class) ? get_class($class) : $class;
 
@@ -484,7 +484,7 @@ if ( ! function_exists('class_basename'))
     }
 }
 
-if ( ! function_exists('class_uses_recursive'))
+if ( ! function_exists('lrv_class_uses_recursive'))
 {
     /**
      * Returns all traits used by a class, it's subclasses and trait of their traits
@@ -492,7 +492,7 @@ if ( ! function_exists('class_uses_recursive'))
      * @param  string  $class
      * @return array
      */
-    function class_uses_recursive($class)
+    function lrv_class_uses_recursive($class)
     {
         $results = [];
 
@@ -505,7 +505,7 @@ if ( ! function_exists('class_uses_recursive'))
     }
 }
 
-if ( ! function_exists('data_get'))
+if ( ! function_exists('lrv_data_get'))
 {
     /**
      * Get an item from an array or object using "dot" notation.
@@ -515,7 +515,7 @@ if ( ! function_exists('data_get'))
      * @param  mixed   $default
      * @return mixed
      */
-    function data_get($target, $key, $default = null)
+    function lrv_data_get($target, $key, $default = null)
     {
         if (is_null($key)) return $target;
 
@@ -558,7 +558,7 @@ if ( ! function_exists('data_get'))
     }
 }
 
-if ( ! function_exists('e'))
+if ( ! function_exists('lrv_e'))
 {
     /**
      * Escape HTML entities in a string.
@@ -566,13 +566,13 @@ if ( ! function_exists('e'))
      * @param  string  $value
      * @return string
      */
-    function e($value)
+    function lrv_e($value)
     {
         return htmlentities($value, ENT_QUOTES, 'UTF-8', false);
     }
 }
 
-if ( ! function_exists('ends_with'))
+if ( ! function_exists('lrv_ends_with'))
 {
     /**
      * Determine if a given string ends with a given substring.
@@ -581,7 +581,7 @@ if ( ! function_exists('ends_with'))
      * @param  string|array  $needles
      * @return bool
      */
-    function ends_with($haystack, $needles)
+    function lrv_ends_with($haystack, $needles)
     {
         foreach ((array) $needles as $needle)
         {
@@ -592,7 +592,7 @@ if ( ! function_exists('ends_with'))
     }
 }
 
-if ( ! function_exists('head'))
+if ( ! function_exists('lrv_head'))
 {
     /**
      * Get the first element of an array. Useful for method chaining.
@@ -600,13 +600,13 @@ if ( ! function_exists('head'))
      * @param  array  $array
      * @return mixed
      */
-    function head($array)
+    function lrv_head($array)
     {
         return reset($array);
     }
 }
 
-if ( ! function_exists('last'))
+if ( ! function_exists('lrv_last'))
 {
     /**
      * Get the last element from an array.
@@ -614,13 +614,13 @@ if ( ! function_exists('last'))
      * @param  array  $array
      * @return mixed
      */
-    function last($array)
+    function lrv_last($array)
     {
         return end($array);
     }
 }
 
-if ( ! function_exists('object_get'))
+if ( ! function_exists('lrv_object_get'))
 {
     /**
      * Get an item from an object using "dot" notation.
@@ -630,7 +630,7 @@ if ( ! function_exists('object_get'))
      * @param  mixed   $default
      * @return mixed
      */
-    function object_get($object, $key, $default = null)
+    function lrv_object_get($object, $key, $default = null)
     {
         if (is_null($key) || trim($key) == '') return $object;
 
@@ -648,7 +648,7 @@ if ( ! function_exists('object_get'))
     }
 }
 
-if ( ! function_exists('preg_replace_sub'))
+if ( ! function_exists('lrv_preg_replace_sub'))
 {
     /**
      * Replace a given pattern with each value in the array in sequentially.
@@ -658,7 +658,7 @@ if ( ! function_exists('preg_replace_sub'))
      * @param  string  $subject
      * @return string
      */
-    function preg_replace_sub($pattern, &$replacements, $subject)
+    function lrv_preg_replace_sub($pattern, &$replacements, $subject)
     {
         return preg_replace_callback($pattern, function() use (&$replacements)
         {
@@ -668,7 +668,7 @@ if ( ! function_exists('preg_replace_sub'))
     }
 }
 
-if ( ! function_exists('snake_case'))
+if ( ! function_exists('lrv_snake_case'))
 {
     /**
      * Convert a string to snake case.
@@ -677,7 +677,7 @@ if ( ! function_exists('snake_case'))
      * @param  string  $delimiter
      * @return string
      */
-    function snake_case($value, $delimiter = '_')
+    function lrv_snake_case($value, $delimiter = '_')
     {
         static $snakeCache = [];
         $key = $value.$delimiter;
@@ -696,7 +696,7 @@ if ( ! function_exists('snake_case'))
     }
 }
 
-if ( ! function_exists('starts_with'))
+if ( ! function_exists('lrv_starts_with'))
 {
     /**
      * Determine if a given string starts with a given substring.
@@ -705,7 +705,7 @@ if ( ! function_exists('starts_with'))
      * @param  string|array  $needles
      * @return bool
      */
-    function starts_with($haystack, $needles)
+    function lrv_starts_with($haystack, $needles)
     {
         foreach ((array) $needles as $needle)
         {
@@ -716,7 +716,7 @@ if ( ! function_exists('starts_with'))
     }
 }
 
-if ( ! function_exists('str_contains'))
+if ( ! function_exists('lrv_str_contains'))
 {
     /**
      * Determine if a given string contains a given substring.
@@ -725,7 +725,7 @@ if ( ! function_exists('str_contains'))
      * @param  string|array  $needles
      * @return bool
      */
-    function str_contains($haystack, $needles)
+    function lrv_str_contains($haystack, $needles)
     {
         foreach ((array) $needles as $needle)
         {
@@ -736,7 +736,7 @@ if ( ! function_exists('str_contains'))
     }
 }
 
-if ( ! function_exists('str_finish'))
+if ( ! function_exists('lrv_str_finish'))
 {
     /**
      * Cap a string with a single instance of a given value.
@@ -745,7 +745,7 @@ if ( ! function_exists('str_finish'))
      * @param  string  $cap
      * @return string
      */
-    function str_finish($value, $cap)
+    function lrv_str_finish($value, $cap)
     {
         $quoted = preg_quote($cap, '/');
 
@@ -753,7 +753,7 @@ if ( ! function_exists('str_finish'))
     }
 }
 
-if ( ! function_exists('str_is'))
+if ( ! function_exists('lrv_str_is'))
 {
     /**
      * Determine if a given string matches a given pattern.
@@ -762,7 +762,7 @@ if ( ! function_exists('str_is'))
      * @param  string  $value
      * @return bool
      */
-    function str_is($pattern, $value)
+    function lrv_str_is($pattern, $value)
     {
         if ($pattern == $value) return true;
 
@@ -777,7 +777,7 @@ if ( ! function_exists('str_is'))
     }
 }
 
-if ( ! function_exists('str_limit'))
+if ( ! function_exists('lrv_str_limit'))
 {
     /**
      * Limit the number of characters in a string.
@@ -787,7 +787,7 @@ if ( ! function_exists('str_limit'))
      * @param  string  $end
      * @return string
      */
-    function str_limit($value, $limit = 100, $end = '...')
+    function lrv_str_limit($value, $limit = 100, $end = '...')
     {
         if (mb_strlen($value) <= $limit) return $value;
 
@@ -795,7 +795,7 @@ if ( ! function_exists('str_limit'))
     }
 }
 
-if ( ! function_exists('str_random'))
+if ( ! function_exists('lrv_str_random'))
 {
     /**
      * Generate a more truly "random" alpha-numeric string.
@@ -805,9 +805,9 @@ if ( ! function_exists('str_random'))
      *
      * @throws \RuntimeException
      */
-    function str_random($length = 16)
+    function lrv_str_random($length = 16)
     {
-        if ( ! function_exists('openssl_random_pseudo_bytes'))
+        if ( ! function_exists('lrv_openssl_random_pseudo_bytes'))
         {
             throw new RuntimeException('OpenSSL extension is required.');
         }
@@ -823,7 +823,7 @@ if ( ! function_exists('str_random'))
     }
 }
 
-if ( ! function_exists('str_replace_array'))
+if ( ! function_exists('lrv_str_replace_array'))
 {
     /**
      * Replace a given value in the string sequentially with an array.
@@ -833,7 +833,7 @@ if ( ! function_exists('str_replace_array'))
      * @param  string  $subject
      * @return string
      */
-    function str_replace_array($search, array $replace, $subject)
+    function lrv_str_replace_array($search, array $replace, $subject)
     {
         foreach ($replace as $value)
         {
@@ -844,7 +844,7 @@ if ( ! function_exists('str_replace_array'))
     }
 }
 
-if ( ! function_exists('str_slug'))
+if ( ! function_exists('lrv_str_slug'))
 {
     /**
      * Generate a URL friendly "slug" from a given string.
@@ -853,7 +853,7 @@ if ( ! function_exists('str_slug'))
      * @param  string  $separator
      * @return string
      */
-    function str_slug($title, $separator = '-')
+    function lrv_str_slug($title, $separator = '-')
 	{
         $title = ascii($title);
 
@@ -872,7 +872,7 @@ if ( ! function_exists('str_slug'))
 	}
 }
 
-if ( ! function_exists('ascii'))
+if ( ! function_exists('lrv_ascii'))
 {
     /**
      * Transliterate a UTF-8 value to ASCII.
@@ -880,7 +880,7 @@ if ( ! function_exists('ascii'))
      * @param  string  $value
      * @return string
      */
-    function ascii($value)
+    function lrv_ascii($value)
     {
         foreach (charsArray() as $key => $val) {
             $value = str_replace($val, $key, $value);
@@ -890,7 +890,7 @@ if ( ! function_exists('ascii'))
     }
 }
 
-if ( ! function_exists('charsArray'))
+if ( ! function_exists('lrv_charsArray'))
 {
     /**
      * Returns the replacements for the ascii method.
@@ -901,7 +901,7 @@ if ( ! function_exists('charsArray'))
      *
      * @return array
      */
-    function charsArray()
+    function lrv_charsArray()
     {
         static $charsArray;
 
@@ -1027,7 +1027,7 @@ if ( ! function_exists('charsArray'))
     }
 }
 
-if ( ! function_exists('studly_case'))
+if ( ! function_exists('lrv_studly_case'))
 {
     /**
      * Convert a value to studly caps case.
@@ -1035,7 +1035,7 @@ if ( ! function_exists('studly_case'))
      * @param  string  $value
      * @return string
      */
-    function studly_case($value)
+    function lrv_studly_case($value)
     {
         static $studlyCache = [];
         $key = $value;
@@ -1051,20 +1051,20 @@ if ( ! function_exists('studly_case'))
     }
 }
 
-if (! function_exists('title_case')) {
+if (! function_exists('lrv_title_case')) {
     /**
      * Convert a value to title case.
      *
      * @param  string  $value
      * @return string
      */
-    function title_case($value)
+    function lrv_title_case($value)
     {
         return mb_convert_case($value, MB_CASE_TITLE, 'UTF-8');
     }
 }
 
-if ( ! function_exists('trait_uses_recursive'))
+if ( ! function_exists('lrv_trait_uses_recursive'))
 {
     /**
      * Returns all traits used by a trait and its traits
@@ -1072,7 +1072,7 @@ if ( ! function_exists('trait_uses_recursive'))
      * @param  string  $trait
      * @return array
      */
-    function trait_uses_recursive($trait)
+    function lrv_trait_uses_recursive($trait)
     {
         $traits = class_uses($trait);
 
@@ -1085,7 +1085,7 @@ if ( ! function_exists('trait_uses_recursive'))
     }
 }
 
-if ( ! function_exists('value'))
+if ( ! function_exists('lrv_value'))
 {
     /**
      * Return the default value of the given value.
@@ -1093,13 +1093,13 @@ if ( ! function_exists('value'))
      * @param  mixed  $value
      * @return mixed
      */
-    function value($value)
+    function lrv_value($value)
     {
         return $value instanceof Closure ? $value() : $value;
     }
 }
 
-if ( ! function_exists('with'))
+if ( ! function_exists('lrv_with'))
 {
     /**
      * Return the given object. Useful for chaining.
@@ -1107,7 +1107,7 @@ if ( ! function_exists('with'))
      * @param  mixed  $object
      * @return mixed
      */
-    function with($object)
+    function lrv_with($object)
     {
         return $object;
     }
@@ -1116,7 +1116,7 @@ if ( ! function_exists('with'))
 /**
  * Helper functions for the helper functions, that can still be used standalone
  */
-if ( ! function_exists('studly'))
+if ( ! function_exists('lrv_studly'))
 {
     /**
      * Convert a value to studly caps case.
@@ -1124,7 +1124,7 @@ if ( ! function_exists('studly'))
      * @param  string  $value
      * @return string
      */
-    function studly($value)
+    function lrv_studly($value)
     {
         static $studlyCache = [];
         $key = $value;
@@ -1140,7 +1140,7 @@ if ( ! function_exists('studly'))
     }
 }
 
-if ( ! function_exists('get'))
+if ( ! function_exists('lrv_get'))
 {
     /**
      * Get an item from an array using "dot" notation.
@@ -1150,7 +1150,7 @@ if ( ! function_exists('get'))
      * @param  mixed   $default
      * @return mixed
      */
-    function get($array, $key, $default = null)
+    function lrv_get($array, $key, $default = null)
     {
         if (is_null($key)) return $array;
 
@@ -1170,7 +1170,7 @@ if ( ! function_exists('get'))
     }
 }
 
-if ( ! function_exists('set'))
+if ( ! function_exists('lrv_set'))
 {
     /**
      * Set an array item to a given value using "dot" notation.
@@ -1182,7 +1182,7 @@ if ( ! function_exists('set'))
      * @param  mixed   $value
      * @return array
      */
-    function set(&$array, $key, $value)
+    function lrv_set(&$array, $key, $value)
     {
         if (is_null($key)) return $array = $value;
 
@@ -1209,7 +1209,7 @@ if ( ! function_exists('set'))
     }
 }
 
-if ( ! function_exists('dot'))
+if ( ! function_exists('lrv_dot'))
 {
     /**
      * Flatten a multi-dimensional associative array with dots.
@@ -1218,7 +1218,7 @@ if ( ! function_exists('dot'))
      * @param  string  $prepend
      * @return array
      */
-    function dot($array, $prepend = '')
+    function lrv_dot($array, $prepend = '')
     {
         $results = array();
 
@@ -1238,7 +1238,7 @@ if ( ! function_exists('dot'))
     }
 }
 
-if ( ! function_exists('first'))
+if ( ! function_exists('lrv_first'))
 {
     /**
      * Return the first element in an array passing a given truth test.
@@ -1248,7 +1248,7 @@ if ( ! function_exists('first'))
      * @param  mixed     $default
      * @return mixed
      */
-    function first($array, $callback, $default = null)
+    function lrv_first($array, $callback, $default = null)
     {
         foreach ($array as $key => $value)
         {
@@ -1259,7 +1259,7 @@ if ( ! function_exists('first'))
     }
 }
 
-if ( ! function_exists('forget'))
+if ( ! function_exists('lrv_forget'))
 {
     /**
      * Remove one or many array items from a given array using "dot" notation.
@@ -1268,7 +1268,7 @@ if ( ! function_exists('forget'))
      * @param  array|string  $keys
      * @return void
      */
-    function forget(&$array, $keys)
+    function lrv_forget(&$array, $keys)
     {
         $original =& $array;
 
@@ -1294,7 +1294,7 @@ if ( ! function_exists('forget'))
     }
 }
 
-if (! function_exists('bcrypt')) {
+if (! function_exists('lrv_bcrypt')) {
     /**
      * Password hash the given value.
      *
@@ -1304,7 +1304,7 @@ if (! function_exists('bcrypt')) {
      *
      * @throws \RuntimeException
      */
-    function bcrypt($value, $options = [])
+    function lrv_bcrypt($value, $options = [])
     {
         $cost = isset($options['rounds']) ? $options['rounds'] : 10;
 
@@ -1318,7 +1318,7 @@ if (! function_exists('bcrypt')) {
     }
 }
 
-if (! function_exists('tap')) {
+if (! function_exists('lrv_tap')) {
     /**
      * Call the given Closure with the given value then return the value.
      *
@@ -1326,7 +1326,7 @@ if (! function_exists('tap')) {
      * @param  callable  $callback
      * @return mixed
      */
-    function tap($value, $callback)
+    function lrv_tap($value, $callback)
     {
         $callback($value);
 
@@ -1334,19 +1334,19 @@ if (! function_exists('tap')) {
     }
 }
 
-if (! function_exists('dd')) {
+if (! function_exists('lrv_dd')) {
     /**
      * Dump the passed variables and end the script.
      *
      * @param  mixed
      * @return void
      */
-    function dd()
+    function lrv_dd()
     {
         array_map(function($x) {
             var_dump($x);
         }, func_get_args());
-        
+
         die(1);
     }
 }
