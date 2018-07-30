@@ -1,6 +1,7 @@
 {
     "name": "rappasoft/laravel-helpers",
     "description": "Laravel Helpers for Non-Laravel Projects",
+    "version": "0.0.1-beta.2",
     "license": "MIT",
     "keywords": ["laravel", "helpers"],
     "authors": [

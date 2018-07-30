@@ -182,7 +182,7 @@ if ( ! function_exists('lrv_array_first'))
             if (call_user_func($callback, $key, $value)) return $value;
         }
 
-        return value($default);
+        return lrv_value($default);
     }
 }
 
@@ -275,7 +275,7 @@ if ( ! function_exists('lrv_array_get'))
         {
             if ( ! is_array($array) || ! array_key_exists($segment, $array))
             {
-                return value($default);
+                return lrv_value($default);
             }
 
             $array = $array[$segment];
@@ -525,7 +525,7 @@ if ( ! function_exists('lrv_data_get'))
             {
                 if ( ! array_key_exists($segment, $target))
                 {
-                    return value($default);
+                    return lrv_value($default);
                 }
 
                 $target = $target[$segment];
@@ -534,7 +534,7 @@ if ( ! function_exists('lrv_data_get'))
             {
                 if ( ! isset($target[$segment]))
                 {
-                    return value($default);
+                    return lrv_value($default);
                 }
 
                 $target = $target[$segment];
@@ -543,14 +543,14 @@ if ( ! function_exists('lrv_data_get'))
             {
                 if ( ! isset($target->{$segment}))
                 {
-                    return value($default);
+                    return lrv_value($default);
                 }
 
                 $target = $target->{$segment};
             }
             else
             {
-                return value($default);
+                return lrv_value($default);
             }
         }
 
@@ -638,7 +638,7 @@ if ( ! function_exists('lrv_object_get'))
         {
             if ( ! is_object($object) || ! isset($object->{$segment}))
             {
-                return value($default);
+                return lrv_value($default);
             }
 
             $object = $object->{$segment};
